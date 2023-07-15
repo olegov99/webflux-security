@@ -1,0 +1,22 @@
+server:
+  port: 8083
+
+spring:
+  r2dbc:
+    url: r2dbc:pool:postgres://localhost:5432/olegov_webflux
+    username: postgres
+    password: postgres
+  flyway:
+    url: jdbc:postgresql://localhost:5432/olegov_webflux
+    user: ${spring.r2dbc.username}
+    password: ${spring.r2dbc.password}
+
+jwt:
+  password:
+    encoder:
+      secret: 3fz2NjV4-1_76RpNHGG-GrCOOXsf5SQe
+      iteration: 64
+      keylength: 23
+    secret: 7DD7E3950433014B73D12ACCE56981932600956DC22933140BBDBF9C14943C3D
+    expiration: 3600
+    issuer: olegov
